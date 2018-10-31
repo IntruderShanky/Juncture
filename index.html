@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./juncture.js"></script>
+</head>
+<body>
+<div style="height: 1500px"></div>
+<div id="div1" class="element" style="height: 300px; background-color: orange">a</div>
+<div class="element" style="height: 300px; background-color: orange">b</div>
+<script>
+    Juncture({elementId: 'div1'}, function (item) {
+        if(!item.classList.contains("abc")){
+            console.log("trigger");
+            item.className = item.className + " abc";
+        }
+    });
+
+    Juncture({elementClass: 'element'}, function (item) {
+        if(!item.classList.contains("abc")){
+            console.log("trigger");
+            item.className = item.className + " abc";
+        }
+    });
+</script>
+</body>
+</html>
