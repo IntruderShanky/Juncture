@@ -10,18 +10,13 @@
 <div id="div1" class="element" style="height: 300px; background-color: orange">a</div>
 <div class="element" style="height: 300px; background-color: orange">b</div>
 <script>
-    Juncture({elementId: 'div1'}, function (item) {
-        if(!item.classList.contains("abc")){
-            console.log("trigger");
-            item.className = item.className + " abc";
-        }
-    });
+    //    Juncture({elementId: 'div1'}, function (item) {
+    //            console.log("trigger");
+    //            item.className = item.className + " abc";
+    //    });
 
     Juncture({elementClass: 'element'}, function (item) {
-        if(!item.classList.contains("abc")){
-            console.log("trigger");
-            item.className = item.className + " abc";
-        }
+        console.log("trigger");
     });
 </script>
 </body>
