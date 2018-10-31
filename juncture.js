@@ -2,6 +2,8 @@ var elementId = '';
 var elementClass = '';
 var elements = [];
 
+var offset = 0;
+
 function Juncture(options, handler) {
     if (options["elementId"]) {
         elementId = options["elementId"];
@@ -9,7 +11,9 @@ function Juncture(options, handler) {
     if (options["elementClass"]) {
         elementClass = options["elementClass"];
     }
-
+    if(options["offset"]){
+        offset = options["offset"]
+    }
 
     window.addEventListener('load', function () {
         if (elementId.length > 0) {
@@ -27,7 +31,7 @@ function Juncture(options, handler) {
 
     window.addEventListener('scroll', function () {
         for (const item of elements) {
-            if (item.offsetTop < window.pageYOffset + window.innerHeight) {
+            if ((item.offsetTop - offset) < (window.pageYOffset + window.innerHeight)) {
                 handler(item);
             }
         }
